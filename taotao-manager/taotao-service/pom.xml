@@ -6,4 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>taotao-service</artifactId>
+  <packaging>jar</packaging>
+  <groupId>com.taotao</groupId>
+  <version>0.0.1-SNAPSHOT</version>
 </project>

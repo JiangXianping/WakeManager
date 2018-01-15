@@ -6,7 +6,12 @@
 		<artifactId>taotao-manager</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
+	<artifactId>taotao-web</artifactId>
+	<groupId>com.taotao</groupId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.taotao</groupId>
@@ -14,7 +19,4 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-
-	<artifactId>taotao-web</artifactId>
-	<packaging>war</packaging>
 </project>
