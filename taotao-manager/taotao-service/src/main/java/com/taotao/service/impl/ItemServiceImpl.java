@@ -82,4 +82,10 @@ public class ItemServiceImpl implements ItemService {
 		itemMapper.updateByPrimaryKey(item);
 		return TaotaoResult.ok();
 	}
+
+	@Override
+	public TaotaoResult deleteItem(Long itemId) {
+		itemMapper.deleteByPrimaryKey(itemId);
+		return TaotaoResult.ok();
+	}
 }

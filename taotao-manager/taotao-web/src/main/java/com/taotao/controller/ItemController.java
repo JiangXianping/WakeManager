@@ -59,15 +59,18 @@ public class ItemController {
 	@RequestMapping(value="/rest/item/update",method=RequestMethod.POST)
 	@ResponseBody
 	public TaotaoResult updateItem(TbItem item){
-		System.out.println(JsonUtils.objectToJson(item));
-		System.out.println(item.getCreated());
 		return itemService.updateItem(item);
+	}
+	
+	@RequestMapping(value="/rest/item/delete",method=RequestMethod.POST)
+	@ResponseBody
+	public TaotaoResult deleteItem(@RequestParam("ids")Long itemId){
+		return itemService.deleteItem(itemId);
 	}
 	
 	@RequestMapping("/rest/item/query/item/desc/{itemid}")
 	@ResponseBody
-	public TbItem geTbItemByid(@PathVariable Long itemid){
-		
+	public TbItem geTbItemByid(@PathVariable Long itemid){	
 		return itemService.getItemById(itemid);
 	}
 }

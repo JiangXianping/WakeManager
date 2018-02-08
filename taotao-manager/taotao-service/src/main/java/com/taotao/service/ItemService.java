@@ -18,5 +18,6 @@ public interface ItemService {
 	
 	TaotaoResult updateItem(TbItem item);
 	
+	TaotaoResult deleteItem(Long itemId);
 	
 }
