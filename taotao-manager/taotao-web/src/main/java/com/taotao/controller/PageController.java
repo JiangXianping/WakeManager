@@ -29,8 +29,8 @@ public class PageController {
 		return page;
 	}
 	
-	@RequestMapping("/rest/page/list-edit")
-	public String editPage(@PathVariable String page){
+	@RequestMapping("/rest/page/item-edit")
+	public String editPage(){
 		return "item-edit";
 	}
 }

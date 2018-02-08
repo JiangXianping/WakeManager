@@ -28,7 +28,6 @@ public class ItemServiceImpl implements ItemService {
 		 TbItemExample example = new TbItemExample();
 		 Criteria criteria = example.createCriteria();
 		 criteria.andIdEqualTo(id);
-		 System.out.println("service"+example+"id"+id);
 		 List<TbItem> list = itemMapper.selectByExample(example);
 		 System.out.println(list.get(0).getImage());
 		 if(list!=null && list.size()>0){

@@ -60,6 +60,14 @@ public class ItemController {
 	@ResponseBody
 	public TaotaoResult updateItem(TbItem item){
 		System.out.println(JsonUtils.objectToJson(item));
+		System.out.println(item.getCreated());
 		return itemService.updateItem(item);
+	}
+	
+	@RequestMapping("/rest/item/query/item/desc/{itemid}")
+	@ResponseBody
+	public TbItem geTbItemByid(@PathVariable Long itemid){
+		
+		return itemService.getItemById(itemid);
 	}
 }
