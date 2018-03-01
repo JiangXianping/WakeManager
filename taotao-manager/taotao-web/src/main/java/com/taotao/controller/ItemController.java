@@ -30,6 +30,7 @@ public class ItemController {
 		TbItem tbItem = itemService.getItemById(itemid);
 		return tbItem;
 	}
+	
 	/**
 	 * 获取列表
 	 * @param page
@@ -52,8 +53,8 @@ public class ItemController {
 	
 	@RequestMapping(value="/item/save",method=RequestMethod.POST)
 	@ResponseBody
-	public TaotaoResult createItem(TbItem item){
-		return itemService.createItem(item);
+	public TaotaoResult createItem(TbItem item,String desc) throws Exception{
+		return itemService.createItem(item,desc);
 	}
 	
 	@RequestMapping(value="/rest/item/update",method=RequestMethod.POST)

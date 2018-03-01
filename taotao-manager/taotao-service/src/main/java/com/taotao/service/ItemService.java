@@ -14,10 +14,11 @@ public interface ItemService {
 	
 	List<TbItem> getAllList();
 	
-	TaotaoResult createItem(TbItem item);
+	TaotaoResult createItem(TbItem item,String desc)throws Exception;
 	
 	TaotaoResult updateItem(TbItem item);
 	
 	TaotaoResult deleteItem(Long itemId);
+	
 	
 }
