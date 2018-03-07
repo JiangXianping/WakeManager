@@ -2,6 +2,8 @@ package com.taotao.service.impl;
 
 import java.util.Date;
 import java.util.List;
+
+import org.aspectj.apache.bcel.generic.MULTIANEWARRAY;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
@@ -11,10 +13,13 @@ import com.taotao.common.utils.IDUtils;
 import com.taotao.common.utils.TaotaoResult;
 import com.taotao.mapper.TbItemDescMapper;
 import com.taotao.mapper.TbItemMapper;
+import com.taotao.mapper.TbItemParamItemMapper;
+import com.taotao.mapper.TbItemParamMapper;
 import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemDesc;
 import com.taotao.pojo.TbItemExample;
 import com.taotao.pojo.TbItemExample.Criteria;
+import com.taotao.pojo.TbItemParamItem;
 import com.taotao.service.ItemService;
 
 @Service
@@ -25,6 +30,9 @@ public class ItemServiceImpl implements ItemService {
 
 	@Autowired
 	private TbItemDescMapper tbItemDescMapper;
+	
+	@Autowired
+	private TbItemParamItemMapper tbItemParamItemMapper;
 	
 	@Override
 	public TbItem getItemById(Long id) {
@@ -65,7 +73,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public TaotaoResult createItem(TbItem item,String desc) throws Exception{
+	public TaotaoResult createItem(TbItem item,String desc,String itemParam) throws Exception{
 		Long itemId = IDUtils.genItemId();
 		item.setId(itemId);
 		//商品状态，1-正常，2-下架，3-删除
@@ -76,6 +84,10 @@ public class ItemServiceImpl implements ItemService {
 		itemMapper.insert(item);
 		//添加商品描述信息
 		TaotaoResult result = insertItemDesc(itemId, desc);
+		if(result.getStatus() != 200){
+			throw new Exception();
+		}
+		result = insertItemParamItem(itemId, itemParam);
 		if(result.getStatus() != 200){
 			throw new Exception();
 		}
@@ -105,6 +117,19 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public TaotaoResult deleteItem(Long itemId) {
 		itemMapper.deleteByPrimaryKey(itemId);
+		return TaotaoResult.ok();
+	}
+
+	@Override
+	public TaotaoResult insertItemParamItem(Long itemId,String itemParam) {
+		TbItemParamItem tbItemParamItem = new TbItemParamItem();
+		tbItemParamItem.setParamData(itemParam);
+		tbItemParamItem.setItemId(itemId);
+		tbItemParamItem.setCreated(new Date());
+		tbItemParamItem.setUpdated(new Date());
+		
+		//向表中添加数据
+		tbItemParamItemMapper.insert(tbItemParamItem);
 		return TaotaoResult.ok();
 	}
 }

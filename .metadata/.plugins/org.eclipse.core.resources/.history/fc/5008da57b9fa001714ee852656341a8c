@@ -1,0 +1,11 @@
+package com.taotao.controller;
+
+import org.junit.Test;
+
+public class TestPageHelper {
+
+	@Test
+	public void testPageHelper(){
+		
+	}
+}

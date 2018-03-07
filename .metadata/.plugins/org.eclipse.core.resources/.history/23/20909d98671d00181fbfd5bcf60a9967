@@ -1,0 +1,27 @@
+package com.taotao.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.taotao.common.utils.TaotaoResult;
+import com.taotao.mapper.TbItemParamMapper;
+import com.taotao.pojo.TbItemParamItemExample;
+import com.taotao.service.ItemParamService;
+
+/**
+ * 商品规格参数模板
+ * @author jiangxianping
+ * @date 2018年3月1号
+ */
+
+public class ItemParamServiceImpl implements ItemParamService {
+
+	@Autowired
+	private TbItemParamMapper tbItemParamMapper;
+	
+	@Override
+	public TaotaoResult getItemParamByCid(long cid) {
+		TbItemParamItemExample example = new TbItemParamItemExample();
+		return null;
+	}
+
+}

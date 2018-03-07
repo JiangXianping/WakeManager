@@ -1,0 +1,30 @@
+package com.taotao.controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.taotao.common.utils.JsonUtils;
+import com.taotao.service.PictrueService;
+
+@Controller
+public class PictrueController {
+	
+	@Autowired
+	public PictrueService pictrueService;
+	
+	@RequestMapping(value="/pic/upload",method=RequestMethod.POST)
+	@ResponseBody
+	public String pictrueUpload(@RequestParam("uploadFile")MultipartFile multipartFile){
+		Map result = pictrueService.uploadPictrue(multipartFile);
+		//为了保证功能的兼容性，需要把result转换成json格式的字符串
+		String json = JsonUtils.objectToJson(result);
+		return json;
+	}
+}

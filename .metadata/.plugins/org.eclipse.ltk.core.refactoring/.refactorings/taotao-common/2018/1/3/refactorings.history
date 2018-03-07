@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.taotao.common.pojo.EasyUiDataResult&apos; to &apos;EUDataResult&apos;&#x0D;&#x0A;- Original project: &apos;taotao-common&apos;&#x0D;&#x0A;- Original element: &apos;com.taotao.common.pojo.EasyUiDataResult&apos;&#x0D;&#x0A;- Renamed element: &apos;com.taotao.common.pojo.EUDataResult&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;EasyUiDataResult&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.taotao.common.pojo{EasyUiDataResult.java[EasyUiDataResult" matchStrategy="1" name="EUDataResult" qualified="false" references="true" similarDeclarations="false" stamp="1516110520935" textual="false" version="1.0"/>
+</session>
