@@ -2,3 +2,4 @@ commentBorder=\#C7DD0C | null | false | false | false | false
 commentText=\#C7DD0C | null | false | false | false | false
 eclipse.preferences.version=1
 jsp_content=\#D8D8D8 | null | false | false | false | false
+newFileTemplateName=New JSP File (html)
