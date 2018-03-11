@@ -1,0 +1,30 @@
+package com.taotao.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.taotao.common.pojo.EUTreeNode;
+import com.taotao.mapper.TbContentCategoryMapper;
+import com.taotao.pojo.TbContentCategory;
+import com.taotao.pojo.TbContentCategoryExample;
+import com.taotao.pojo.TbContentCategoryExample.Criteria;
+import com.taotao.service.ContentCategoryService;
+
+@Service
+public class ContentCategoryServiceImpl implements ContentCategoryService {
+
+	@Autowired
+	private TbContentCategoryMapper tbContentCategoryMapper;
+	
+	@Override
+	public List<EUTreeNode> getContentCatList(Long parentid) {
+		TbContentCategoryExample tbContentCategoryExample = new TbContentCategoryExample();
+		Criteria criteria = tbContentCategoryExample.createCriteria();
+		criteria.andParentIdEqualTo(parentid);
+		
+		return null;
+	}
+
+}
