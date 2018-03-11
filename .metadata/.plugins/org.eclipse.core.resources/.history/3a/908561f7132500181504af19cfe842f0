@@ -14,6 +14,4 @@ public interface ContentCategoryService {
 	TaotaoResult deleteConectCatgory(Long parentId,Long id);
 	
 	Long selectContentCatgory(Long id);
-	
-	TaotaoResult updateContentCatgory(Long id,String name);
 }

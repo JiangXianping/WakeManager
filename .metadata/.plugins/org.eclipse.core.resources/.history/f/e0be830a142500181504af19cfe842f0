@@ -88,14 +88,4 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		return tbContentCategory.getParentId();
 	}
 
-	@Override
-	public TaotaoResult updateContentCatgory(Long id, String name) {
-		TbContentCategory tbContentCategory = new TbContentCategory();
-		tbContentCategory.setId(id);
-		tbContentCategory.setName(name);
-		//更新名称
-		tbContentCategoryMapper.updateByPrimaryKeySelective(tbContentCategory);
-		return TaotaoResult.ok();
-	}
-
 }

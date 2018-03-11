@@ -24,6 +24,7 @@ public class ContentCategoryController {
 	@RequestMapping("/list")
 	@ResponseBody
 	public List<EUTreeNode> getContentCategoryList(@RequestParam(value="id",defaultValue="0")Long id){
+		System.out.println(id);
 		List<EUTreeNode> list = contentCategoryService.getContentCatList(id);
 		return list;
 	}

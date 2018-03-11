@@ -24,6 +24,7 @@ public class ContentCategoryController {
 	@RequestMapping("/list")
 	@ResponseBody
 	public List<EUTreeNode> getContentCategoryList(@RequestParam(value="id",defaultValue="0")Long id){
+		System.out.println(id);
 		List<EUTreeNode> list = contentCategoryService.getContentCatList(id);
 		return list;
 	}
@@ -41,12 +42,6 @@ public class ContentCategoryController {
 		//根据id查找parentid
 		parentId = contentCategoryService.selectContentCatgory(id);
 		return contentCategoryService.deleteConectCatgory(parentId, id);
-	}
-	
-	@RequestMapping("/update")
-	@ResponseBody
-	public TaotaoResult updateContentCategory(Long id,String name){
-		return contentCategoryService.updateContentCatgory(id, name);
 	}
 	
 }
