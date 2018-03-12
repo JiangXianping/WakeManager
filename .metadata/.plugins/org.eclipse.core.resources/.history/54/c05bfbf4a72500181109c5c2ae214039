@@ -1,0 +1,42 @@
+package com.taotao.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.taotao.common.pojo.EUDataResult;
+import com.taotao.mapper.TbContentMapper;
+import com.taotao.pojo.TbContent;
+import com.taotao.pojo.TbContentExample;
+import com.taotao.pojo.TbContentExample.Criteria;
+import com.taotao.service.ContentService;
+
+@Service
+public class ContentServiceImpl implements ContentService {
+
+	@Autowired
+	private TbContentMapper tbContentMapper;
+	
+	@Override
+	public EUDataResult getContentList(int page, int rows, Long categoryId) {
+		TbContentExample tbContentExample = new TbContentExample();
+		Criteria criteria = tbContentExample.createCriteria();
+		criteria.andIdEqualTo(categoryId);
+		//查询信息
+		List<TbContent> list = tbContentMapper.selectByExampleWithBLOBs(tbContentExample);
+		
+		EUDataResult euDataResult = new EUDataResult();
+		euDataResult.setRows(list);
+		// 分页处理
+		PageHelper.startPage(page, rows);
+		PageInfo<TbContent> tbContent = new PageInfo<>(list);
+		euDataResult.setTotal(tbContent.getTotal());
+		
+		return euDataResult;
+	}
+
+}

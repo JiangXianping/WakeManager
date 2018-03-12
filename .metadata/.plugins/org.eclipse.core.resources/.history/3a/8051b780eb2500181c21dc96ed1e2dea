@@ -1,0 +1,10 @@
+package com.taotao.service;
+
+import com.taotao.common.pojo.EUDataResult;
+
+public interface ContentService {
+	
+	public EUDataResult getContentList(Long categoryId,int page,int rows);
+	
+	
+}

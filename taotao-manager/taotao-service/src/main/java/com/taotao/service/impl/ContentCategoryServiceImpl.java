@@ -7,13 +7,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.PageHelper;
+import com.taotao.common.pojo.EUDataResult;
 import com.taotao.common.pojo.EUTreeNode;
 import com.taotao.common.utils.JsonUtils;
 import com.taotao.common.utils.TaotaoResult;
 import com.taotao.mapper.TbContentCategoryMapper;
+import com.taotao.pojo.TbContent;
 import com.taotao.pojo.TbContentCategory;
 import com.taotao.pojo.TbContentCategoryExample;
 import com.taotao.pojo.TbContentCategoryExample.Criteria;
+import com.taotao.pojo.TbContentExample;
 import com.taotao.service.ContentCategoryService;
 
 @Service
@@ -23,7 +27,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	private TbContentCategoryMapper tbContentCategoryMapper;
 	
 	@Override
-	public List<EUTreeNode> getContentCatList(Long parentid) {
+	public List<EUTreeNode> getContentCateList(Long parentid) {
 		TbContentCategoryExample tbContentCategoryExample = new TbContentCategoryExample();
 		Criteria criteria = tbContentCategoryExample.createCriteria();
 		criteria.andParentIdEqualTo(parentid);
@@ -43,7 +47,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	}
 
 	@Override
-	public TaotaoResult insertConentCatgory(Long parentId, String name) {
+	public TaotaoResult insertConentCategory(Long parentId, String name) {
 		TbContentCategory tbContentCategory = new TbContentCategory();
 		tbContentCategory.setName(name);
 		tbContentCategory.setIsParent(false);
@@ -67,7 +71,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	}
 
 	@Override
-	public TaotaoResult deleteConectCatgory(Long parentId, Long id) {
+	public TaotaoResult deleteConectCategory(Long parentId, Long id) {
 		//删除记录
 		tbContentCategoryMapper.deleteByPrimaryKey(id);
 		TbContentCategoryExample tbContentCategoryExample = new TbContentCategoryExample();
@@ -83,13 +87,13 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	}
 
 	@Override
-	public Long selectContentCatgory(Long id) {
+	public Long selectContentCategory(Long id) {
 		TbContentCategory tbContentCategory = tbContentCategoryMapper.selectByPrimaryKey(id);
 		return tbContentCategory.getParentId();
 	}
 
 	@Override
-	public TaotaoResult updateContentCatgory(Long id, String name) {
+	public TaotaoResult updateContentCategory(Long id, String name) {
 		TbContentCategory tbContentCategory = new TbContentCategory();
 		tbContentCategory.setId(id);
 		tbContentCategory.setName(name);
@@ -97,5 +101,8 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		tbContentCategoryMapper.updateByPrimaryKeySelective(tbContentCategory);
 		return TaotaoResult.ok();
 	}
+
+
+	
 
 }

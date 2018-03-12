@@ -56,7 +56,6 @@ public class ItemServiceImpl implements ItemService {
 		TbItemExample example = new TbItemExample();
 		// 分页处理
 		PageHelper.startPage(page, rows);
-		System.out.println("分页处理");
 		List<TbItem> list = itemMapper.selectByExample(example);
 		// 创建一个返回对象
 		EUDataResult result = new EUDataResult();

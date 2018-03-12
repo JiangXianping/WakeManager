@@ -2,18 +2,22 @@ package com.taotao.service;
 
 import java.util.List;
 
+import com.taotao.common.pojo.EUDataResult;
 import com.taotao.common.pojo.EUTreeNode;
 import com.taotao.common.utils.TaotaoResult;
 
 public interface ContentCategoryService {
 	
-	List<EUTreeNode> getContentCatList(Long parentid);
+	List<EUTreeNode> getContentCateList(Long parentid);
 	
-	TaotaoResult insertConentCatgory(Long parentId,String name);
+	TaotaoResult insertConentCategory(Long parentId,String name);
 	
-	TaotaoResult deleteConectCatgory(Long parentId,Long id);
+	TaotaoResult deleteConectCategory(Long parentId,Long id);
 	
-	Long selectContentCatgory(Long id);
+	Long selectContentCategory(Long id);
 	
-	TaotaoResult updateContentCatgory(Long id,String name);
+	TaotaoResult updateContentCategory(Long id,String name);
+	
+	
+	
 }

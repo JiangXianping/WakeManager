@@ -24,14 +24,14 @@ public class ContentCategoryController {
 	@RequestMapping("/list")
 	@ResponseBody
 	public List<EUTreeNode> getContentCategoryList(@RequestParam(value="id",defaultValue="0")Long id){
-		List<EUTreeNode> list = contentCategoryService.getContentCatList(id);
+		List<EUTreeNode> list = contentCategoryService.getContentCateList(id);
 		return list;
 	}
 	
 	@RequestMapping("/create")
 	@ResponseBody
 	public TaotaoResult createContentCategory(Long parentId, String name) {
-		TaotaoResult result = contentCategoryService.insertConentCatgory(parentId, name);
+		TaotaoResult result = contentCategoryService.insertConentCategory(parentId, name);
 		return result;
 	}
 	
@@ -39,14 +39,14 @@ public class ContentCategoryController {
 	@ResponseBody
 	public TaotaoResult deleteContentCategory(@RequestParam(value="parentId",defaultValue="0")Long  parentId,Long id){
 		//根据id查找parentid
-		parentId = contentCategoryService.selectContentCatgory(id);
-		return contentCategoryService.deleteConectCatgory(parentId, id);
+		parentId = contentCategoryService.selectContentCategory(id);
+		return contentCategoryService.deleteConectCategory(parentId, id);
 	}
 	
 	@RequestMapping("/update")
 	@ResponseBody
 	public TaotaoResult updateContentCategory(Long id,String name){
-		return contentCategoryService.updateContentCatgory(id, name);
+		return contentCategoryService.updateContentCategory(id, name);
 	}
 	
 }
