@@ -15,6 +15,11 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<dependencies>
 		<dependency>
 			<groupId>com.taotao</groupId>
+			<artifactId>taotao-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.taotao</groupId>
 			<artifactId>taotao-mapper</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

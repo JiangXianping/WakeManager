@@ -29,4 +29,6 @@ public class ContentController {
 	public TaotaoResult insertTbContent(TbContent content){
 		return contentService.insertContent(content);
 	}
+	
+	
 }
