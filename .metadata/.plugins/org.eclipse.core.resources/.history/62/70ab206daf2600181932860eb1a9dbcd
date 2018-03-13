@@ -1,0 +1,8 @@
+package com.taotao.httpclient;
+
+public class HttpClientTest {
+	
+	public void doGet(){
+		
+	}
+}

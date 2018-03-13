@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HttpClientTest.doGet" project="taotao-portal" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testcase name="doGet" classname="com.taotao.httpclient.HttpClientTest" time="1.182">
+    <error>java.lang.IllegalArgumentException: Illegal character in scheme name at index 0: 192.168.4.30:8080&#13;
+	at java.net.URI.create(URI.java:852)&#13;
+	at org.apache.http.client.methods.HttpGet.&lt;init&gt;(HttpGet.java:69)&#13;
+	at com.taotao.httpclient.HttpClientTest.doGet(HttpClientTest.java:18)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.lang.reflect.Method.invoke(Method.java:497)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)&#13;
+Caused by: java.net.URISyntaxException: Illegal character in scheme name at index 0: 192.168.4.30:8080&#13;
+	at java.net.URI$Parser.fail(URI.java:2848)&#13;
+	at java.net.URI$Parser.checkChars(URI.java:3021)&#13;
+	at java.net.URI$Parser.checkChar(URI.java:3031)&#13;
+	at java.net.URI$Parser.parse(URI.java:3047)&#13;
+	at java.net.URI.&lt;init&gt;(URI.java:588)&#13;
+	at java.net.URI.create(URI.java:850)&#13;
+	... 25 more&#13;
+&#13;
+</error>
+  </testcase>
+</testrun>
