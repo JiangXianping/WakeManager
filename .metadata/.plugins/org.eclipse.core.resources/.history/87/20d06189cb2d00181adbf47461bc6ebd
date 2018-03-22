@@ -1,0 +1,14 @@
+package com.taotao.rest.service.impl;
+
+import com.taotao.common.utils.TaotaoResult;
+import com.taotao.rest.service.RedisService;
+
+public class RedisServiceImpl implements RedisService {
+
+	@Override
+	public TaotaoResult syncContent(long contentCid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

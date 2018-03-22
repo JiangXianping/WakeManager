@@ -1,0 +1,13 @@
+package com.taotao.rest.controller;
+
+import org.springframework.stereotype.Controller;
+/**
+ * 缓存同步
+ * @author jiangxianping
+ * @date 2018年3月22日下午8:28:34
+ *
+ */
+@Controller
+public class RedisController {
+	
+}

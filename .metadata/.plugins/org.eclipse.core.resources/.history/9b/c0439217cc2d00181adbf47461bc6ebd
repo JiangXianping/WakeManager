@@ -1,0 +1,24 @@
+package com.taotao.rest.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+
+import com.taotao.common.utils.TaotaoResult;
+import com.taotao.rest.service.RedisService;
+import com.toatao.rest.dao.JedisClient;
+
+public class RedisServiceImpl implements RedisService {
+
+	@Autowired
+	private JedisClient jedisClient;
+	
+	@Value("${INDEX_CONTENT_REDIS_KEY}")
+	private String INDEX_CONTENT_REDIS_KEY;
+	
+	@Override
+	public TaotaoResult syncContent(long contentCid) {
+		jedisClient
+		return null;
+	}
+
+}

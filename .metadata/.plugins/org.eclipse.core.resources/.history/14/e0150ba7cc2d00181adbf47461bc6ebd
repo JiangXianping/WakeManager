@@ -1,0 +1,22 @@
+package com.taotao.rest.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+/**
+ * 缓存同步
+ * @author jiangxianping
+ * @date 2018年3月22日下午8:28:34
+ *
+ */
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.taotao.rest.service.RedisService;
+@Controller
+public class RedisController {
+	
+	@Autowired
+	private RedisService redisService;
+	
+	@RequestMapping("/")
+	
+}
