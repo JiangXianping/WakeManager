@@ -1,0 +1,5 @@
+package com.taotao.rest.service;
+
+public interface JedisClient {
+	String get(String key);
+}

@@ -1,0 +1,7 @@
+package com.taotao.rest.dao.impl;
+
+import com.toatao.rest.dao.JedisClient;
+
+public class JedisClientSingle implements JedisClient{
+
+}

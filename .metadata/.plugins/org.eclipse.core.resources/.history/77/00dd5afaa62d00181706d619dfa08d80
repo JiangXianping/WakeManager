@@ -1,0 +1,5 @@
+package com.taotao.rest.dao.impl;
+
+public class JedisClientSingle {
+
+}

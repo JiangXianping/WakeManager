@@ -54,6 +54,10 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+					<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+			</dependency>
 	</dependencies>
 	<build>
 		<plugins>

@@ -1,5 +1,10 @@
-commentBorder=\#C7DD0C | null | false | false | false | false
-commentText=\#C7DD0C | null | false | false | false | false
+SCRIPT_AREA_BORDER=\#1F1F1F | null | false | false | false | false
+commentBorder=\#88A527 | null | false | true | false | false
+commentText=\#88A527 | null | false | true | false | false
 eclipse.preferences.version=1
-jsp_content=\#D8D8D8 | null | false | false | false | false
+jsp_content=\#2E2E2E | null | false | false | false | false
 newFileTemplateName=New JSP File (html)
+tagAttributeEquals=\#2E2E2E | null | false | false | false | false
+tagAttributeName=\#1E7129 | null | true | false | false | false
+tagAttributeValue=\#B87E14 | null | false | false | false | false
+tagBorder=\#1F1F1F | null | false | false | false | false

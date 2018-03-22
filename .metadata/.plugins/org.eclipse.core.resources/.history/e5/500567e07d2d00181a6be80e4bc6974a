@@ -1,0 +1,23 @@
+package com.taotao.rest.jedis;
+
+import org.junit.Test;
+
+import redis.clients.jedis.Jedis;
+
+public class JedisTest {
+	
+	@Test
+	public void testJedisSingle(){
+		//创建Jedis对象
+		Jedis jedis = new Jedis("192.168.4.135",6379);
+		//调用Jedis对象的方法，方法名称和redis的命令一致
+		jedis.set("key1", "jedis test");
+		String string = jedis.get("key1");
+		System.out.println(string);
+		//关闭Jedis
+		jedis.close();
+	}
+	
+	//使用连接池
+	
+}

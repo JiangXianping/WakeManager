@@ -1,8 +1,0 @@
-package com.taotao.service;
-
-import com.taotao.common.pojo.EUDataResult;
-
-public interface ContentService {
-	
-	public EUDataResult getContentList(Long parentId,int page,int rows);
-}

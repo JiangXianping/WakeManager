@@ -20,7 +20,7 @@ public class ContentServiceImpl implements ContentService {
 	@Override
 	public List<TbContent> getContentListById(Long contentId) {
 
-		// 根据内容分类Id查询内容列表
+		//根据内容分类Id查询内容列表
 		TbContentExample example = new TbContentExample();
 		Criteria criteria = example.createCriteria();
 		criteria.andCategoryIdEqualTo(contentId);
@@ -30,5 +30,4 @@ public class ContentServiceImpl implements ContentService {
 		return list;
 
 	}
-
 }
