@@ -1,0 +1,30 @@
+package com.taotao.search.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.taotao.common.utils.TaotaoResult;
+import com.taotao.search.service.ItemService;
+import com.taotao.search.service.impl.ItemServiceImpl;
+
+/**
+ * 索引库维护
+ * @author jiangxianping
+ * @date 2018年3月29日下午2:57:17
+ *
+ */
+@Controller
+@RequestMapping("/manager")
+public class ItemController {
+	
+	@Autowired
+	private ItemService itemService;
+	
+	@RequestMapping("/importall")
+	public TaotaoResult importAllItems(){
+		TaotaoResult result = itemService.importAllItems();
+		return result;
+	}
+}

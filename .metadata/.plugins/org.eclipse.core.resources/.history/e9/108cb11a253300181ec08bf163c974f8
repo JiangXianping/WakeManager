@@ -1,0 +1,35 @@
+package com.taotao.search.service.impl;
+
+public class ItemServiceImpl {
+	@Autowired
+	private ItemMapper itemMapper;
+	@Autowired
+	private SolrServer solrServer;
+
+	@Override
+	public TaotaoResult importAllItems() {
+		// 写入索引库
+		try {
+			// 查询商品列表
+			List<Item> list = itemMapper.getItemList();
+			// 把商品信息写入索引库
+			for (Item item : list) {
+				SolrInputDocument document = new SolrInputDocument();
+				document.setField("id", item.getId());
+				document.setField("item_title", item.getTitle());
+				document.setField("item_sell_point", item.getSell_point());
+				document.setField("item_image", item.getImage());
+				document.setField("item_price", item.getPrice());
+				document.setField("item_category_name", item.getCategory_name());
+				document.setField("item_desc", item.getItem_des());
+				
+				solrServer.add(document);
+			}
+			solrServer.commit();
+			return TaotaoResult.ok();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return TaotaoResult.ok();
+	}
+}

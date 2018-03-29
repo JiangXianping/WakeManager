@@ -1,0 +1,40 @@
+package com.taotao.search.dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.naming.spi.DirStateFactory.Result;
+import javax.xml.transform.SourceLocator;
+
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServer;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.taotao.search.dao.SearchDao;
+import com.taotao.search.pojo.Item;
+import com.taotao.search.pojo.SearchResult;
+
+public class SearchDaoImpl implements SearchDao {
+
+	@Autowired
+	private SolrServer solrServer;
+	
+	@Override
+	public SearchResult search(SolrQuery solrQuery) throws Exception {
+		//返回值对象
+		SearchResult searchResult = new SearchResult();
+		//根据查询条件查询索引库
+		QueryResponse response = solrServer.query(solrQuery);
+		//取查询结果
+		SolrDocumentList solrDocument = response.getResults();
+		//取查询结果总数量
+		searchResult.setRecordCount(solrDocument.getNumFound());
+		//商品列表
+		List<Item> itemList = new ArrayList<>();
+		return null;
+	}
+
+}

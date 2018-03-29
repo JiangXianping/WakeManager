@@ -1,0 +1,17 @@
+package com.taotao.search.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.taotao.common.utils.TaotaoResult;
+import com.taotao.search.service.ItemService;
+
+@Service
+public class ItemServiceImpl implements ItemService {
+
+	@Override
+	public TaotaoResult importAllItems() {
+		
+		return null;
+	}
+
+}

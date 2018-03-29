@@ -4,13 +4,13 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="taotao-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/taotao-common/taotao-common">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="taotao-mapper-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/taotao-mapper/taotao-mapper">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="taotao-pojo-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/taotao-pojo/taotao-pojo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="taotao-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/taotao-common/taotao-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="taotao-search"/>

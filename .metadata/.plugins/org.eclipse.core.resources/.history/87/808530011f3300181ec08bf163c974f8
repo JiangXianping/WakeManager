@@ -1,0 +1,14 @@
+package com.taotao.search.controller;
+
+import org.springframework.stereotype.Controller;
+
+/**
+ * 索引库维护
+ * @author jiangxianping
+ * @date 2018年3月29日下午2:57:17
+ *
+ */
+@Controller
+public class ItemController {
+	
+}

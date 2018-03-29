@@ -1,0 +1,32 @@
+package com.taotao.search.service.impl;
+
+import java.util.List;
+
+import org.apache.solr.common.SolrDocument;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.taotao.common.utils.TaotaoResult;
+import com.taotao.search.mapper.ItemMapper;
+import com.taotao.search.pojo.Item;
+import com.taotao.search.service.ItemService;
+
+@Service
+public class ItemServiceImpl implements ItemService {
+
+	@Autowired
+	private ItemMapper itemMapper;
+	
+	@Override
+	public TaotaoResult importAllItems() {
+		//查询商品列表
+		List<Item> list = itemMapper.getItemList();
+		//把商品信息写入索引库
+		for(Item item:list){
+			SolrDocument document = new SolrDocument();
+			
+		}
+		return null;
+	}
+
+}

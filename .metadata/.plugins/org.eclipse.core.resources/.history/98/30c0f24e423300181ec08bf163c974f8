@@ -1,0 +1,27 @@
+package com.taotao.search.dao.impl;
+
+import javax.xml.transform.SourceLocator;
+
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServer;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.taotao.search.dao.SearchDao;
+import com.taotao.search.pojo.SearchResult;
+
+public class SearchDaoImpl implements SearchDao {
+
+	@Autowired
+	private SolrServer solrServer;
+	
+	@Override
+	public SearchResult search(SolrQuery solrQuery) throws Exception {
+		QueryResponse response = solrServer.query(solrQuery);
+		SolrDocument solrDocument = response.getResults();
+		
+		return null;
+	}
+
+}
